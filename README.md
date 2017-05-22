@@ -1,1 +1,1 @@
-# graphql-java
+# learning-graphql-java
