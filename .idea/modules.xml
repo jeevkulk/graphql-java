@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/graphql-java_main.iml" filepath="$PROJECT_DIR$/.idea/modules/graphql-java_main.iml" group="graphql-java" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/graphql-java_test.iml" filepath="$PROJECT_DIR$/.idea/modules/graphql-java_test.iml" group="graphql-java" />
+    </modules>
+  </component>
+</project>

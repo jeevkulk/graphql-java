@@ -1,0 +1,24 @@
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+apply plugin: "java"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile group: 'com.graphql-java', name: 'graphql-java', version: '3.0.0'
+    testCompile 'junit:junit:4.12'
+}
+
+sourceSets {
+    main.java.srcDir "src/main"
+    test.java.srcDir "src/test"
+}
+
+jar {
+    manifest.attributes "Main-Class": "hello.HelloWorld"
+}
+
