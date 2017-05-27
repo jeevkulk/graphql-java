@@ -1,4 +1,4 @@
-package hello;
+package clients;
 
 
 import graphql.GraphQL;
@@ -9,13 +9,14 @@ import graphql.schema.GraphQLSchema;
 
 import java.util.Map;
 
-public class HelloWorld {
+public class FirstGraphQLClient {
 
     public static void main(String[] args){
 
         GraphQLObjectType graphQLObjectType = GraphQLObjectType.newObject()
                 .name("helloWorldQuery")
-                .field(GraphQLFieldDefinition.newFieldDefinition()
+                .field(
+                        GraphQLFieldDefinition.newFieldDefinition()
                         .type(Scalars.GraphQLString)
                         .name("sayHello")
                         .staticValue("Hello World!")
@@ -26,7 +27,10 @@ public class HelloWorld {
                 .query(graphQLObjectType)
                 .build();
 
-        Map<String, Object> resultMap = new GraphQL(graphQLSchema).execute("{sayHello}").getData();
+        Map<String, Object> resultMap = GraphQL.newGraphQL(graphQLSchema)
+                .build()
+                .execute("{sayHello}")
+                .getData();
 
         System.out.println(resultMap);
 
