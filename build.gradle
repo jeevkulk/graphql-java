@@ -1,14 +1,27 @@
-repositories {
-    mavenCentral()
-    mavenLocal()
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    }
 }
 
-apply plugin: "java"
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
     compile group: 'com.graphql-java', name: 'graphql-java', version: '3.0.0'
     testCompile 'junit:junit:4.12'
 }
@@ -19,6 +32,8 @@ sourceSets {
 }
 
 jar {
-    manifest.attributes "Main-Class": "hello.HelloWorld"
+    baseName = "learning-graphql-java"
+    version = "1.0.0"
+    manifest.attributes "Main-Class": "springboot.config.Application"
 }
 
