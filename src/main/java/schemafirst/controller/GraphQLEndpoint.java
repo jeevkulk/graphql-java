@@ -1,14 +1,14 @@
-package springboot.controller;
+package schemafirst.controller;
 
 import com.coxautodev.graphql.tools.SchemaParser;
-import exceptions.GraphQLException;
+import schemafirst.exceptions.GraphQLException;
 import graphql.ExceptionWhileDataFetching;
 import graphql.GraphQLError;
 import graphql.schema.GraphQLSchema;
 import graphql.servlet.SimpleGraphQLServlet;
-import repository.PeopleRepository;
-import resolver.Mutation;
-import resolver.Query;
+import schemafirst.repository.PeopleRepository;
+import schemafirst.resolver.Mutation;
+import schemafirst.resolver.Query;
 
 import javax.servlet.annotation.WebServlet;
 import java.util.List;
@@ -24,7 +24,7 @@ public class GraphQLEndpoint extends SimpleGraphQLServlet {
     private static GraphQLSchema buildSchema() {
         PeopleRepository peopleRepository = new PeopleRepository();
         return SchemaParser.newParser()
-                .file("schema/schema.graphqls")
+                .file("schemafirst/schema.graphqls")
                 .resolvers(new Query(peopleRepository), new Mutation(peopleRepository))
                 .build()
                 .makeExecutableSchema();

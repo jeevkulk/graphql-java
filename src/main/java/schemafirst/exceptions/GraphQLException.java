@@ -1,4 +1,4 @@
-package exceptions;
+package schemafirst.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import graphql.ExceptionWhileDataFetching;

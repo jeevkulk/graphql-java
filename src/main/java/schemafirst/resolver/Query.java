@@ -1,9 +1,9 @@
-package resolver;
+package schemafirst.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLRootResolver;
-import domain.Person;
-import filter.PersonFilter;
-import repository.PeopleRepository;
+import schemafirst.domain.Person;
+import schemafirst.filter.PersonFilter;
+import schemafirst.repository.PeopleRepository;
 
 import java.util.List;
 

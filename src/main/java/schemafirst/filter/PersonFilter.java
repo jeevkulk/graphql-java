@@ -1,4 +1,4 @@
-package filter;
+package schemafirst.filter;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

@@ -1,25 +1,25 @@
-package clients.sayhello;
+package hellographql.schema;
 
-
-import graphql.GraphQL;
+import hellographql.datafetcher.SayHelloDataFetcher;
 import graphql.Scalars;
 import graphql.schema.GraphQLFieldDefinition;
 import graphql.schema.GraphQLObjectType;
 import graphql.schema.GraphQLSchema;
 
-import java.util.Map;
+public class ProgrammaticGraphQLSchema {
 
-public class SayHelloGraphQLClient {
+    public static GraphQLSchema getGraphQLSchema() {
 
-    public static void main(String[] args){
+        SayHelloDataFetcher dataFetcher = new SayHelloDataFetcher();
 
         GraphQLObjectType graphQLObjectType = GraphQLObjectType.newObject()
                 .name("helloWorldQuery")
                 .field(
                         GraphQLFieldDefinition.newFieldDefinition()
-                        .type(Scalars.GraphQLString)
-                        .name("sayHello")
-                        .staticValue("Hello World!")
+                                .type(Scalars.GraphQLString)
+                                .name("sayHello")
+                                .dataFetcher(environment -> dataFetcher.get(environment))
+                                .build()
                 )
                 .build();
 
@@ -27,15 +27,6 @@ public class SayHelloGraphQLClient {
                 .query(graphQLObjectType)
                 .build();
 
-        Map<String, Object> resultMap = GraphQL.newGraphQL(graphQLSchema)
-                .build()
-                .execute("{sayHello}")
-                .getData();
-
-        System.out.println(resultMap);
-
-
+        return graphQLSchema;
     }
 }
-
-

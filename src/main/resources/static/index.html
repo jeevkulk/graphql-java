@@ -89,7 +89,7 @@
         updateURL();
       }
       function updateURL() {
-        var newSearch = '?' + Object.keys(parameters).filter(function (key) {
+        var newSearch = '?' + Object.keys(parameters).schemafirst.filter(function (key) {
           return Boolean(parameters[key]);
         }).map(function (key) {
           return encodeURIComponent(key) + '=' +
