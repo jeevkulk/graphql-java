@@ -1,4 +1,4 @@
-package domain;
+package schemafirst.domain;
 
 public class Person {
 

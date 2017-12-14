@@ -1,4 +1,4 @@
-package services.sayhello;
+package hellographql.service;
 
 public class SayHelloService {
 

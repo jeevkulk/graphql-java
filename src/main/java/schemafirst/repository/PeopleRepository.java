@@ -1,7 +1,7 @@
-package repository;
+package schemafirst.repository;
 
-import domain.Person;
-import filter.PersonFilter;
+import schemafirst.domain.Person;
+import schemafirst.filter.PersonFilter;
 
 import java.util.ArrayList;
 import java.util.List;

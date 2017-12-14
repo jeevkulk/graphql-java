@@ -1,22 +1,20 @@
-package springboot.config;
+package config;
 
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import springboot.controller.GraphQLEndpoint;
-import springboot.controller.sayhello.SayHelloController;
+import hellographql.controller.SayHelloController;
 
 import java.util.Arrays;
 
 @SpringBootApplication
 @ComponentScan(basePackageClasses = {SayHelloController.class})
-@ServletComponentScan(basePackages = "springboot.controller")
+@ServletComponentScan(basePackages = {"hellographql.controller","schemafirst.controller"})
 public class Application {
 
     public static void main(String[] args){

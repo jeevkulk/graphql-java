@@ -1,20 +1,24 @@
-package clients.sayhello;
+package hellographql.controller;
 
 import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
-import schemas.sayhello.ProgrammaticGraphQLSchema;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import hellographql.schema.ProgrammaticGraphQLSchema;
 
 import java.util.Map;
 
+@RestController
+public class SayHelloController {
 
-public class ProgrammaticGraphQLClient {
-
-    public static void main(String[] args){
+    @RequestMapping("/query")
+    public Map<String, Object> queryGraphQL() {
         GraphQLSchema graphQLSchema = ProgrammaticGraphQLSchema.getGraphQLSchema();
         Map<String, Object> resultMap = GraphQL.newGraphQL(graphQLSchema)
                 .build()
                 .execute("{sayHello}")
                 .getData();
         System.out.println(resultMap);
+        return resultMap;
     }
 }

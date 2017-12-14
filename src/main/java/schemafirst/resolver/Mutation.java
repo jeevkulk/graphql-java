@@ -1,8 +1,8 @@
-package resolver;
+package schemafirst.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLRootResolver;
-import domain.Person;
-import repository.PeopleRepository;
+import schemafirst.domain.Person;
+import schemafirst.repository.PeopleRepository;
 
 public class Mutation implements GraphQLRootResolver {
 
