@@ -1,4 +1,5 @@
 type Person {
+    id: Int!
     firstName: String!
     lastName: String!
     age: Int!
@@ -7,10 +8,18 @@ type Person {
 
 type Query {
     allPeople: [Person]
+    people(filter: PersonFilter): [Person]
+}
+
+input PersonFilter {
+    firstNameStartsWith: String
+    ageFrom: Int
+    ageTo: Int
+    city: String
 }
 
 type Mutation {
-    createPerson(firstName: String!, lastName: String!, age: Int!, city: String!): Person
+    createPerson(id: Int!, firstName: String!, lastName: String!, age: Int!, city: String!): Person
 }
 
 schema {

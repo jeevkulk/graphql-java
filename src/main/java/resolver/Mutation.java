@@ -12,8 +12,8 @@ public class Mutation implements GraphQLRootResolver {
         this.repository = repository;
     }
 
-    public Person createPerson(String firstName, String lastName, int age, String city) {
-        Person person = new Person(firstName, lastName, age, city);
+    public Person createPerson(int id, String firstName, String lastName, int age, String city) {
+        Person person = new Person(id, firstName, lastName, age, city);
         repository.addPerson(person);
         return person;
     }
