@@ -1,4 +1,4 @@
-__**# learning-graphql-java**
+# learning-graphql-java
 
 **Prerequisites:**
 1.  Download latest Gradle: https://gradle.org/releases
