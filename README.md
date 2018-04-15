@@ -1,4 +1,4 @@
-**# learning-graphql-java**
+__**# learning-graphql-java**
 
 **Prerequisites:**
 1.  Download latest Gradle: https://gradle.org/releases
@@ -13,12 +13,12 @@
         ii.     Execute `java -jar build/libs/learning-graphql-java-1.0.0.jar` from command prompt<br>
         iii.    After the server starts - try running `localhost:8080/home` and `localhost:8080/query` from browser
 3.  To run schema-first graphQL end point:<br>
-    a.  Run Application class to start the service 
+    a.  Run Application class to start the service<br> 
     b.  Open browser and hit url `http://localhost:8080/graphql?query=%7BallPeople%7BfirstName lastName%7D%7D` to see only first and last names displayed<br>
     c.  Go to url `http://localhost:8080` to open GraphiQL in the browser. Then try following graphQL queries:<br>
     
         i.
-        {
+        query {
           allPeople {
             firstName
             lastName
@@ -35,7 +35,7 @@
         }
 
         iii.
-        {
+        query {
           people (schemafirst.filter: {city: "Pune"}) {
             firstName
             lastName
